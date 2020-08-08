@@ -88,18 +88,12 @@ window.start = () => {
 	.append('circle')
 	.on('click', d => { alert(`${Math.round(d[0])}, ${Math.round(max - d[1])}`) })
 	.on('mouseover', (d, i, ds) => {
-		// ds[i].setAttribute('r', 6)
 		TweenLite.to(ds[i], .5, { r: 7, ease: Power1.easeOut })
-		// ds[i].classList.add('grow')
 		d3.select('#texts').selectAll('text')._groups[0][i].setAttribute('opacity', 1)
 		d3.select('#rects').selectAll('rect')._groups[0][i].setAttribute('opacity', 1)
 	})
 	.on('mouseout', (d, i, ds) => {
-		// ds[i].setAttribute('r', 3)
 		TweenLite.to(ds[i], .35, { r: 3, ease: Power1.easeIn })
-		// if (ds[i].classList.contains('grow')) {
-		// 	ds[i].classList.remove('grow')
-		// }
 		d3.select('#texts').selectAll('text')._groups[0][i].setAttribute('opacity', 0)
 		d3.select('#rects').selectAll('rect')._groups[0][i].setAttribute('opacity', 0)
 	})
