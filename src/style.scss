@@ -1,0 +1,22 @@
+html, body {
+	margin: 0;
+}
+
+.label {
+	font-size: 9px;
+	// background: red;
+	// background-color: red;
+}
+
+.grow {
+	animation: grow .5s ease-in;
+}
+
+@keyframes grow {
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(1.1);
+	}
+}
